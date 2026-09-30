@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f7fb">
+<meta name="description" content="Elektrotechnika jednoduše: osm kapitol, animované ukázky, vzorce, příklady a otázky k učebnici Elektrotechnický základ.">
+<title>Elektrotechnika jednoduše — učebnice krok za krokem</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#nahoru" aria-label="Elektrotechnika jednoduše – začátek">
+      <span class="brand-mark" aria-hidden="true">↯</span><span>Elektro jednoduše</span>
+    </a>
+    <nav class="top-links" aria-label="Hlavní navigace">
+      <a href="#kapitola-01">Kurz</a><a href="#vzorce">Vzorce</a><a href="#bezpecnost">Bezpečnost</a>
+    </nav>
+    <button class="theme-btn" id="theme-toggle" type="button" aria-label="Přepnout vzhled">◐ <span id="theme-label">Tmavý vzhled</span></button>
+    <button class="menu-btn" id="menu-toggle" type="button" aria-label="Zobrazit kapitoly">Kapitoly</button>
+  </div>
+</header>
+<section class="hero" id="nahoru">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Učebnice krok za krokem</div>
+      <h1>Elektřina, která <span class="hero-blue">dává smysl.</span></h1>
+      <p>Celý <em>Elektrotechnický základ</em> převyprávěný jednoduše: od elektronu až po rádiovou vlnu. Krátké lekce, názorné animace, příklady a otázky, které ti pomůžou látku opravdu pochopit.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#zacatek">Začít od základů <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-soft" href="#kapitola-01">Přejít na kapitoly</a>
+      </div>
+      <div class="stats">
+        <span class="stat"><strong>8</strong> kapitol</span>
+        <span class="stat"><strong>8</strong> krátkých kvízů</span>
+        <span class="stat"><strong>0</strong> nutných předchozích znalostí</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-label="Animované schéma uzavřeného elektrického obvodu">
+      <div class="art-label">Elektrický obvod v pohybu</div>
+      <h2>Napětí žene náboj kolem obvodu.</h2>
+      <svg class="circuit" viewBox="0 0 520 230" role="img" aria-label="Baterie, vodiče a rezistor v uzavřeném obvodu">
+        <path class="wire" d="M70 38 H405 Q440 38 440 73 V154 Q440 188 405 188 H70 Q38 188 38 154 V73 Q38 38 70 38"/>
+        <path class="flow glow" d="M70 38 H405 Q440 38 440 73 V154 Q440 188 405 188 H70 Q38 188 38 154 V73 Q38 38 70 38"/>
+        <path d="M38 98v30 M25 106v14" stroke="#ffca76" stroke-width="5" stroke-linecap="round"/>
+        <text x="14" y="153" fill="#d9edff" font-size="13">zdroj</text>
+        <path d="M238 38l10-12 14 24 14-24 14 24 14-24 14 24 12-12" fill="none" stroke="#ffc879" stroke-width="4" stroke-linejoin="round"/>
+        <text x="251" y="15" fill="#d9edff" font-size="13">rezistor</text>
+        <circle cx="115" cy="38" r="6" fill="#58f2ce"><animate attributeName="cx" values="82;402;402;82;82" dur="5s" repeatCount="indefinite"/></circle>
+        <circle cx="440" cy="103" r="5" fill="#58f2ce"><animate attributeName="cy" values="75;150;150;75;75" dur="5s" repeatCount="indefinite"/></circle>
+        <text x="326" y="215" fill="#bed2e8" font-size="12">proud I</text>
+      </svg>
+      <div class="art-chip">Tok se neztrácí. Energie se předává.</div>
+    </div>
+  </div>
+</section>
+<div class="progress-wrap" aria-label="Postup kurzem">
+  <div class="progress-row"><span id="progress-text">Tvůj postup: 0 z 8 kapitol</span><span id="progress-percent">0 %</span></div>
+  <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+</div>
+<div class="layout" id="obsah">
+  <aside class="sidebar" aria-label="Obsah kurzu">
+    <p class="side-title">Obsah kurzu</p>
+    <nav id="chapter-nav" aria-label="Kapitoly"></nav>
+    <div class="side-extra"><a href="#vzorce">Tahák vzorců</a><a href="#slovnicek">Slovníček</a><a href="#materialy">Materiály</a><a href="#bezpecnost">Bezpečnost</a></div>
+  </aside>
+  <main>
+    <div class="searchbox"><span aria-hidden="true">⌕</span><label for="search" class="visually-hidden">Hledat v kurzu</label><input id="search" type="search" placeholder="Najít téma: odpor, kondenzátor, cívka…" autocomplete="off"></div>
+    <section class="start-card" id="zacatek">
+      <div class="section-kicker">Než začneš</div>
+      <h2>Stačí znát pár značek.</h2>
+      <p>Každá veličina má značku a jednotku. V příkladech nejdřív vypiš známé hodnoty, převeď předpony na základní jednotky a teprve potom dosaď do vzorce.</p>
+      <div class="unit-grid">
+        <div class="unit"><b>U · volt (V)</b><span>napětí — rozdíl, který žene náboj</span></div>
+        <div class="unit"><b>I · ampér (A)</b><span>proud — kolik náboje teče za sekundu</span></div>
+        <div class="unit"><b>R · ohm (Ω)</b><span>odpor — jak moc součástka brání proudu</span></div>
+        <div class="unit"><b>Q · coulomb (C)</b><span>elektrický náboj</span></div>
+        <div class="unit"><b>P · watt (W)</b><span>výkon — energie za sekundu</span></div>
+        <div class="unit"><b>t · sekunda (s)</b><span>čas</span></div>
+      </div>
+      <div class="note"><b>Předpony, které se hodí nejčastěji</b><p>k = kilo = 1 000 · M = mega = 1 000 000 · m = mili = 0,001 · μ = mikro = 0,000001 · n = nano = 0,000000001. Takže 2 kΩ = 2 000 Ω a 470 μF = 0,000470 F.</p></div>
+      <div class="lab" id="laborator">
+        <h3>Malá laboratoř: Ohmův zákon</h3>
+        <p>Měň napětí nebo odpor a sleduj, jak se změní proud. Zdroj napětí tlačí; větší odpor průtok brzdí.</p>
+        <div class="lab-grid">
+          <div class="range-wrap"><label for="voltage"><span>Napětí U</span><span id="voltage-label">12 V</span></label><input type="range" id="voltage" min="1" max="24" value="12"></div>
+          <div class="range-wrap"><label for="resistance"><span>Odpor R</span><span id="resistance-label">100 Ω</span></label><input type="range" id="resistance" min="10" max="1000" step="10" value="100"></div>
+          <div class="lab-result"><strong id="current-result">0,12 A</strong><span>proud I = U / R</span></div>
+        </div>
+      </div>
+    </section>
+    <div id="chapters"></div>
+    <div class="no-results" id="no-results">Tady jsem to téma nenašel. Zkus kratší výraz, třeba „proud“ nebo „magnet“.</div>
+    <section class="appendix" id="vzorce">
+      <div class="section-kicker">Rychlá pomůcka</div><h2>Tahák nejdůležitějších vzorců</h2>
+      <p>Nejdřív si pojmenuj, co hledáš, a zkontroluj jednotky. Stejný vzorec často jde jen přepsat podle neznámé veličiny.</p>
+      <div class="formula-list">
+        <div class="formula-row"><code>I = Q / t</code>proud z náboje a času</div>
+        <div class="formula-row"><code>U = R · I</code>Ohmův zákon</div>
+        <div class="formula-row"><code>R = ρ · l / S</code>odpor vodiče</div>
+        <div class="formula-row"><code>P = U · I</code>elektrický výkon</div>
+        <div class="formula-row"><code>W = P · t</code>elektrická práce / energie</div>
+        <div class="formula-row"><code>η = Pvýst / Pvst</code>účinnost</div>
+        <div class="formula-row"><code>C = Q / U</code>kapacita kondenzátoru</div>
+        <div class="formula-row"><code>F = k · |q₁q₂| / r²</code>Coulombův zákon</div>
+        <div class="formula-row"><code>Φ = B · S · cos α</code>magnetický tok</div>
+        <div class="formula-row"><code>uᵢ = −N · ΔΦ / Δt</code>Faradayův a Lenzův zákon</div>
+        <div class="formula-row"><code>Uef = Umax / √2</code>efektivní hodnota sinusovky</div>
+        <div class="formula-row"><code>f = 1 / T</code>frekvence a perioda</div>
+        <div class="formula-row"><code>P = U · I · cos φ</code>činný výkon střídavého proudu</div>
+        <div class="formula-row"><code>P = √3 · Uₗ · Iₗ · cos φ</code>výkon souměrné trojfázové soustavy</div>
+        <div class="formula-row"><code>f₀ = 1 / (2π√LC)</code>rezonanční frekvence LC obvodu</div>
+        <div class="formula-row"><code>λ = c / f</code>vlnová délka</div>
+      </div>
+    </section>
+    <section class="appendix" id="slovnicek">
+      <div class="section-kicker">Mluvíme elektrotechnicky</div><h2>Slovníček bez složitostí</h2>
+      <div class="glossary">
+        <div><b>Náboj Q:</b> vlastnost částic, díky které na sebe elektricky působí.</div>
+        <div><b>Napětí U:</b> energie připadající na jednotku náboje; rozdíl mezi dvěma místy.</div>
+        <div><b>Proud I:</b> uspořádaný pohyb náboje vodičem.</div>
+        <div><b>Odpor R:</b> míra, jak součástka omezuje proud.</div>
+        <div><b>Vodivost G:</b> převrácená hodnota odporu, G = 1/R.</div>
+        <div><b>Kapacita C:</b> kolik náboje uloží kondenzátor na jeden volt.</div>
+        <div><b>Dielektrikum:</b> izolant mezi deskami kondenzátoru.</div>
+        <div><b>Magnetický tok Φ:</b> kolik magnetického pole prochází plochou.</div>
+        <div><b>Indukčnost L:</b> vlastnost cívky bránit rychlé změně proudu a ukládat energii v poli.</div>
+        <div><b>Impedance Z:</b> celková překážka proudu ve střídavém obvodu.</div>
+        <div><b>Frekvence f:</b> počet opakování děje za sekundu; jednotka hertz (Hz).</div>
+        <div><b>Účiník cos φ:</b> část zdánlivého výkonu, která se mění na užitečný činný výkon.</div>
+      </div>
+    </section>
+    <section class="appendix" id="materialy">
+      <div class="section-kicker">Referenční tabulky učebnice</div><h2>Materiály a jejich vlastnosti</h2>
+      <p>Tabulkové hodnoty pomáhají porovnávat materiály. Skutečné vlastnosti se mohou měnit podle teploty, složení a výroby.</p>
+      <details class="reference-details"><summary>Odporové materiály</summary>
+        <div class="table-scroll"><table class="reference-table"><thead><tr><th>Materiál</th><th>Rezistivita ρ (Ω·mm²/m)</th><th>Teplotní součinitel α (1/K)</th></tr></thead><tbody>
+        <tr><td>Stříbro</td><td>0,0163</td><td>0,004</td></tr><tr><td>Měď</td><td>0,0178</td><td>0,0042</td></tr><tr><td>Hliník</td><td>0,0285</td><td>0,004</td></tr><tr><td>Železo</td><td>0,1</td><td>0,0055</td></tr><tr><td>Konstantan</td><td>0,5</td><td>0,000002</td></tr>
+        </tbody></table></div><p class="table-note">Menší rezistivita znamená lepší vodič. Konstantan má naopak velký odpor a jeho hodnota se mění s teplotou jen málo.</p>
+      </details>
+      <details class="reference-details"><summary>Izolanty v kondenzátorech</summary>
+        <div class="table-scroll"><table class="reference-table"><thead><tr><th>Materiál</th><th>Relativní permitivita εᵣ</th><th>Elektrická pevnost (kV/mm)</th></tr></thead><tbody>
+        <tr><td>Vzduch</td><td>1,0006</td><td>2–3</td></tr><tr><td>Minerální olej</td><td>2,2–2,4</td><td>20–30</td></tr><tr><td>Kondenzátorový papír</td><td>2–5</td><td>30–58</td></tr><tr><td>Polyetylen</td><td>2,2–2,3</td><td>45–60</td></tr><tr><td>Křemenné sklo</td><td>3,5–4</td><td>20–50</td></tr><tr><td>Slída</td><td>6–7</td><td>40–80</td></tr>
+        </tbody></table></div><p class="table-note">Relativní permitivita vyjadřuje, jak materiál ovlivňuje elektrické pole a kapacitu. Elektrická pevnost přibližně ukazuje, jak silné pole izolant snese, než dojde k průrazu.</p>
+      </details>
+      <p class="source-note">Hodnoty jsou převzaté z přehledových tabulek původní učebnice; v praxi je vždy rozhodující katalog konkrétní součástky.</p>
+    </section>
+    <section class="appendix safety" id="bezpecnost">
+      <div class="section-kicker">Tohle si zapamatuj nejvíc</div><h2>Úraz proudem: nejdřív bezpečí zachránce</h2>
+      <p>Průchod proudu tělem může způsobit popáleniny, poruchu srdečního rytmu nebo bezvědomí. Následky ovlivňuje velikost proudu, jeho cesta tělem, doba působení i okolní podmínky. Zasažený člověk má být vždy vyšetřen zdravotníkem.</p>
+      <div class="step"><span class="step-num">1</span><div><b>Nedotýkej se člověka, dokud může být pod proudem.</b><br>Bezpečně vypni zdroj, spotřebič nebo jistič. U vysokého napětí se nepřibližuj; nebezpečný může být i elektrický oblouk a krokové napětí. Počkej na odborníky.</div></div>
+      <div class="step"><span class="step-num">2</span><div><b>Zavolej pomoc na 155 nebo 112.</b><br>Popiš, co se stalo, kde jste a jestli člověk reaguje a normálně dýchá. Řiď se pokyny operátora.</div></div>
+      <div class="step"><span class="step-num">3</span><div><b>Pomáhej až z bezpečného místa.</b><br>Pokud člověk nereaguje a nedýchá normálně, zahaj resuscitaci a použij AED, pokud je k dispozici. Operátor tě postupem provede. Pokračuj do příjezdu pomoci nebo do chvíle, kdy tě vystřídá někdo kvalifikovaný.</div></div>
+      <div class="note"><b>Ověřený postup první pomoci</b><p>Bezpečnostní část se řídí Standardy první pomoci Českého červeného kříže a jejich aktuálními změnami. <a href="https://www.cervenykriz.eu/standardy-poskytovani-pp" target="_blank" rel="noopener">Český červený kříž: standardy první pomoci</a> · <a href="https://www.zzshmp.cz/prvni-pomoc/automatizovany-externi-defibrilator-aed/" target="_blank" rel="noopener">ZZS Praha: použití AED</a> · <a href="https://hzscr.gov.cz/clanek/integrovany-zachranny-system-tisnove-volani--tisnova-volani.aspx" target="_blank" rel="noopener">HZS ČR: tísňová čísla</a>.</p></div>
+    </section>
+  </main>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <div><b>Studijní pomůcka k učebnici Elektrotechnický základ.</b><br>Výklad a příklady jsou napsané nově a jednoduše; nenahrazují odbornou výuku ani bezpečnostní předpisy.</div>
+    <div>Zdroj učiva: <a href="https://sosehl.cz/uploads/2020/11/Elektrotechnicky_zaklad_ucebni_text.pdf" target="_blank" rel="noopener">SOŠ elektrotechnická, Hluboká nad Vltavou (2011)</a>.</div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="lessons.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
